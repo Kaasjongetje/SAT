@@ -1,0 +1,28 @@
+@use "abstracts/colors.scss" as *;
+@use "abstracts/sizes.scss" as *;
+
+.calculation-type-selector {
+    display: flex;
+    gap: $calculation-type-selector-gap;
+}
+
+.calculation-type-select-button {
+    flex: 1;
+    padding: $calculation-type-select-button-padding;
+
+    background-color: $calculation-type-select-button-color;
+
+    &:hover,
+    &:focus {
+        background-color: $calculation-type-select-button-hovered-color;
+    }   
+
+    &.selected,
+    &:active {
+        background-color: $calculation-type-select-button-selected-color;
+    }
+
+    color: $calculation-type-select-button-fontcolor;
+    font-size: $calculation-type-select-button-fontsize;
+    border-radius: $calculation-type-select-button-borderradius;
+}

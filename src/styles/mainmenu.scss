@@ -1,0 +1,14 @@
+@use "abstracts/sizes.scss" as *;
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-inline: $main-menu-margin;
+    justify-content: space-between;
+}
+
+.dividing-line {
+    height: $value-container-bordersize;
+    background-color: black;
+}

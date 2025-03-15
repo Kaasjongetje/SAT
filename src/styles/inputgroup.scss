@@ -1,0 +1,20 @@
+@use "abstracts/sizes.scss" as *;
+@use "abstracts/colors.scss" as *;
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: $inputgroup-label-inputs-distance;
+}
+
+.input-group-label {
+    font-weight: bold;
+    font-size: $inputgroup-label-fontsize;
+    color: $inputgroup-label-color;
+}
+
+.inputs-container {
+    display: flex;
+    flex-direction: column;
+    gap: $inputs-gap;
+}

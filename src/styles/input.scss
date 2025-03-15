@@ -1,0 +1,42 @@
+@use "abstracts/sizes.scss" as *;
+@use "abstracts/colors.scss" as *;
+
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: $unit-label-value-container-distance;
+}
+
+.unit-label {
+    font-size: $unit-label-fontsize;
+    color: $unit-label-color;
+}
+
+.value-container {
+    padding: $value-container-padding; 
+    border: $value-container-bordersize solid $value-container-border-color; 
+    border-radius: $value-container-borderradius; 
+    color: $value-color;
+    font-size: $value-fontsize;
+    display: flex;
+    justify-content: center;
+
+    input {
+        padding: $value-padding; 
+        font-size: inherit;
+        color: inherit;
+        text-align: center;
+        width: 100%;
+        background-color: transparent;
+
+        &.time-input {
+            box-sizing: content-box;
+            width: 2ch;
+        }
+    }
+
+    .colon {
+        padding: $value-padding;
+    }
+
+}

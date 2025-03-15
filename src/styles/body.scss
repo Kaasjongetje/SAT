@@ -1,0 +1,14 @@
+@use "abstracts/colors.scss" as *;
+@use "abstracts/sizes.scss" as *;
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: $calculation-type-selector-main-menu-distance;
+    font-family: sans-serif;
+
+    height: 100vh;
+    background-color: $background-color;
+    padding: $body-padding;
+}
