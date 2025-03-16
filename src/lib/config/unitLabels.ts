@@ -1,8 +1,8 @@
-export const kilometersPerHourLabel = "km/uur"
-export const minutesPerKilometerLabel = "min/km"
-export const minutesPer100MeterLabel = "min/100m"
+export const KILOMETERS_PER_HOUR_LABEL = "km/uur"
+export const MINUTES_PER_KILOMETER_LABEL = "min/km"
+export const MINUTES_PER_100_METERS_LABEL = "min/100m"
 
-export const kilometersLabel = "km"
-export const metersLabel = "m"
+export const KILOMETERS_LABEL = "km"
+export const METERS_LABEL = "m"
 
-export const timeLabel = "uur:min:sec"
+export const TIME_LABEL = "uur:min:sec"

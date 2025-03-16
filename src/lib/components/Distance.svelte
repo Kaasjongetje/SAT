@@ -1,8 +1,9 @@
 <script lang="ts">
     import InputGroup from "./abstract/InputGroup.svelte"
     import Input from "./abstract/Input.svelte"
-    import { kilometersLabel, metersLabel } from "../config/unitLabels"
+    import { KILOMETERS_LABEL, METERS_LABEL } from "../config/unitLabels"
     import { CalculationType } from "../scripts/enums"
+    import { metersToKilometers, kilometersToMeters } from "../scripts/conversion"
 
     let { distance, setDistance } = $props()
 
@@ -10,23 +11,23 @@
 
 <InputGroup inputGroupLabel={CalculationType.DISTANCE}>
     {#snippet inputGroupComponent()}
-        <Input unitLabel={kilometersLabel}>
+        <Input unitLabel={KILOMETERS_LABEL}>
             {#snippet inputValueComponent()}
                 <input 
                     type="number" 
-                    value={distance / 1000}
-                    oninput={e => setDistance(e.target.value * 1000)}
+                    value={metersToKilometers(distance)}
+                    oninput={e => setDistance(kilometersToMeters(Number(e.target.value)))}
                 />
             {/snippet}
         </Input>
         
         
-        <Input unitLabel={metersLabel}>
+        <Input unitLabel={METERS_LABEL}>
             {#snippet inputValueComponent()}
                 <input 
                     type="number" 
                     value={distance}
-                    oninput={e => setDistance(e.target.value)}
+                    oninput={e => setDistance(Number(e.target.value))}
                 />
             {/snippet}
         </Input>
