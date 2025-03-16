@@ -13,16 +13,6 @@
      } from "./lib/config/defaultValues"
      import { retrieveNumber, storeNumber, retrieveCalculationType, CALCULATIONTYPE_KEY } from "./lib/scripts/storage"
 
-    // Logische dingen:
-    // numerical precision afronden
-    // displayonly modus
-    // service worker
-    // clamp
-
-    // Creative Dingen:
-    // stijl
-    // min grootte voor css en max telefoongrootte
-
     let calculationType = $state(retrieveCalculationType() ?? DEFAULT_CALCULATIONTYPE)
     let speed = $state(retrieveNumber(CalculationType.SPEED) ?? DEFAULT_SPEED) // (m/s)
     let distance = $state(retrieveNumber(CalculationType.DISTANCE) ?? DEFAULT_DISTANCE) // (m)
@@ -58,43 +48,43 @@
 {#if calculationType == CalculationType.SPEED}
     <Menu>
         {#snippet input1()}
-            <Distance distance={distance} setDistance={setDistance}/>
+            <Distance distance={distance} setDistance={setDistance} displayOnly={false} />
         {/snippet}
 
         {#snippet input2()}
-            <Time time={time} setTime={setTime} />
+            <Time time={time} setTime={setTime} displayOnly={false} />
         {/snippet}
 
         {#snippet output()}
-            <Speed speed={speed} setSpeed={setSpeed} />
+            <Speed speed={speed} setSpeed={setSpeed} displayOnly={true} />
         {/snippet}
     </Menu>
 {:else if calculationType == CalculationType.DISTANCE}
     <Menu>
         {#snippet input1()}
-            <Speed speed={speed} setSpeed={setSpeed} />
+            <Speed speed={speed} setSpeed={setSpeed} displayOnly={false} />
         {/snippet}
 
         {#snippet input2()}
-            <Time time={time} setTime={setTime} />
+            <Time time={time} setTime={setTime} displayOnly={false} />
         {/snippet}
 
         {#snippet output()}
-            <Distance distance={distance} setDistance={setDistance}/>
+            <Distance distance={distance} setDistance={setDistance} displayOnly={true} />
         {/snippet}
     </Menu>
 {:else if calculationType == CalculationType.TIME}
     <Menu>
         {#snippet input1()}
-            <Speed speed={speed} setSpeed={setSpeed} />
+            <Speed speed={speed} setSpeed={setSpeed} displayOnly={false} />
         {/snippet}
 
         {#snippet input2()}
-            <Distance distance={distance} setDistance={setDistance} />
+            <Distance distance={distance} setDistance={setDistance} displayOnly={false} />
         {/snippet}
 
         {#snippet output()}
-            <Time time={time} setTime={setTime} />
+            <Time time={time} setTime={setTime} displayOnly={true} />
         {/snippet}
     </Menu>
 {/if}

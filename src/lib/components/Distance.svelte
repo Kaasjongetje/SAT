@@ -4,8 +4,9 @@
     import { KILOMETERS_LABEL, METERS_LABEL } from "../config/unitLabels"
     import { CalculationType } from "../scripts/enums"
     import { metersToKilometers, kilometersToMeters } from "../scripts/conversion"
+    import { round } from "../scripts/helper"
 
-    let { distance, setDistance } = $props()
+    let { distance, setDistance, displayOnly } = $props()
 
 </script>
 
@@ -15,8 +16,9 @@
             {#snippet inputValueComponent()}
                 <input 
                     type="number" 
-                    value={metersToKilometers(distance)}
+                    value={round(metersToKilometers(distance), 3)}
                     oninput={e => setDistance(kilometersToMeters(Number(e.target.value)))}
+                    disabled={displayOnly}
                 />
             {/snippet}
         </Input>
@@ -26,8 +28,9 @@
             {#snippet inputValueComponent()}
                 <input 
                     type="number" 
-                    value={distance}
+                    value={round(distance, 3)}
                     oninput={e => setDistance(Number(e.target.value))}
+                    disabled={displayOnly}
                 />
             {/snippet}
         </Input>

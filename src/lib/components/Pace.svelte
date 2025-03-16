@@ -1,7 +1,7 @@
 <script lang="ts">
     import { extractMinutesAndSeconds, getTotalSeconds } from "../scripts/conversion"
 
-    let { speed, convert, setSpeed } = $props()
+    let { speed, convert, setSpeed, disabled } = $props()
 
     const [minutes, seconds] = $derived(extractMinutesAndSeconds(convert(speed)))
 
@@ -12,6 +12,7 @@
     value={minutes}
     oninput={e => setSpeed(convert(getTotalSeconds(0, Number(e.target.value), seconds)))}
     class="time-input"
+    disabled={disabled}
 >
 
 <div class="colon">:</div>
@@ -21,4 +22,5 @@
     value={seconds}
     oninput={e => setSpeed(convert(getTotalSeconds(0, minutes, Number(e.target.value))))}
     class="time-input"
+    disabled={disabled}
 >

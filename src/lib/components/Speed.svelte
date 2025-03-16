@@ -10,8 +10,9 @@
         convertMetersPerSecondAndSecondsPerKilometer,
         convertMetersPerSecondAndSecondsPer100Meter,
     } from "../scripts/conversion"
+    import { round } from "../scripts/helper"
 
-    let { speed, setSpeed } = $props()
+    let { speed, setSpeed, displayOnly } = $props()
 
 </script>
 
@@ -21,8 +22,9 @@
             {#snippet inputValueComponent()}
                 <input 
                     type="number"
-                    value={metersPerSecondToKilometersPerHour(speed)}
+                    value={round(metersPerSecondToKilometersPerHour(speed), 3)}
                     oninput={e => setSpeed(kilometersPerHourToMetersPerSecond(e.target.value))}
+                    disabled={displayOnly}
                 />
             {/snippet}
         </Input>
@@ -33,6 +35,7 @@
                     speed={speed}
                     convert={convertMetersPerSecondAndSecondsPerKilometer} 
                     setSpeed={setSpeed}
+                    disabled={displayOnly}
                 />
             {/snippet}
         </Input>
@@ -43,6 +46,7 @@
                     speed={speed}
                     convert={convertMetersPerSecondAndSecondsPer100Meter}
                     setSpeed={setSpeed}
+                    disabled={displayOnly}
                 />
             {/snippet}
         </Input>
