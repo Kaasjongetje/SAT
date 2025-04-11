@@ -5,7 +5,8 @@
 }
 
 button,
-input {
+input,
+select {
     border: none;
     outline: none;
 }
@@ -17,4 +18,14 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="number"] {
     -moz-appearance: textfield;
-  }
+}
+
+select {
+  -webkit-appearance: none;  /* Verbergt het pijltje in Webkit browsers (Chrome, Safari) */
+  -moz-appearance: none;     /* Verbergt het pijltje in Firefox */
+  appearance: none; 
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

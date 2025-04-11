@@ -1,0 +1,41 @@
+@use "abstracts/fluidclamp" as *;
+@use "abstracts/colors" as *;
+@use "abstracts/sizes" as *;
+
+body {
+    padding: $body-padding;
+    min-height: 100vh;
+    display: flex;
+    
+    font-family: sans-serif;
+    font-size: $fontsize;
+
+    background-color: $primary-color;
+
+    .app-container {
+        margin-block: 0rem;
+        display: flex;
+        flex-direction: column;
+ 
+        width: $max-viewport-width;
+        margin-inline: auto;
+        background-color: red;
+        gap: 2rem;
+
+        .main-menu-container {
+            background-color: green;
+            opacity: 0.75;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 1rem;
+            justify-content: space-between;
+            margin-inline: $main-menu-margin;
+
+            .dividing-line {
+                height: $value-container-bordersize;
+                background-color: $secondary-color;
+            }
+        }
+    }
+}

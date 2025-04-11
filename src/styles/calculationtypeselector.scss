@@ -10,19 +10,22 @@
     flex: 1;
     padding: $calculation-type-select-button-padding;
 
-    background-color: $calculation-type-select-button-color;
+    background-color: $secondary-color;
+
+    color: $text-color;
+    // font-size: $calculation-type-select-button-fontsize;
+    border-radius: $calculation-type-select-button-borderradius;
+    font-size: inherit;
 
     &:hover,
     &:focus {
-        background-color: $calculation-type-select-button-hovered-color;
+        background-color: $focus-color;
+        color: $text-hover-color;
     }   
 
     &.selected,
     &:active {
-        background-color: $calculation-type-select-button-selected-color;
+        background-color: $accent-color;
+        color: $text-selected-color;
     }
-
-    color: $calculation-type-select-button-fontcolor;
-    font-size: $calculation-type-select-button-fontsize;
-    border-radius: $calculation-type-select-button-borderradius;
 }

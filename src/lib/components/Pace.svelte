@@ -1,5 +1,6 @@
 <script lang="ts">
     import { extractMinutesAndSeconds, getTotalSeconds } from "../scripts/conversion"
+    import TimeSelect from "./TimeSelect.svelte";
 
     let { speed, convert, setSpeed, disabled } = $props()
 
@@ -7,20 +8,18 @@
 
 </script>
 
-<input 
-    type="number"
+<TimeSelect 
     value={minutes}
-    oninput={e => setSpeed(convert(getTotalSeconds(0, Number(e.target.value), seconds)))}
-    class="time-input"
+    max={59}
     disabled={disabled}
->
+    onChange={(newMinutes: number) => setSpeed(convert(getTotalSeconds(0, newMinutes, seconds)))}
+/>
 
 <div class="colon">:</div>
 
-<input 
-    type="number"
+<TimeSelect 
     value={seconds}
-    oninput={e => setSpeed(convert(getTotalSeconds(0, minutes, Number(e.target.value))))}
-    class="time-input"
+    max={59}
     disabled={disabled}
->
+    onChange={(newSeconds: number) => setSpeed(convert(getTotalSeconds(0, minutes, newSeconds)))}
+/>

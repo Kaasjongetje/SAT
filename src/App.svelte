@@ -40,51 +40,54 @@
 
 </script>
 
-<CalculationTypeSelector 
-    selectedCalculationType={calculationType}
-    setCalculationType={setCalculationType} 
-/>
+<div class="app-container">
+    <CalculationTypeSelector 
+        selectedCalculationType={calculationType}
+        setCalculationType={setCalculationType} 
+    />
 
-{#if calculationType == CalculationType.SPEED}
-    <Menu>
-        {#snippet input1()}
-            <Distance distance={distance} setDistance={setDistance} displayOnly={false} />
-        {/snippet}
+    {#if calculationType == CalculationType.SPEED}
+        <Menu>
+            {#snippet input1()}
+                <Distance distance={distance} setDistance={setDistance} displayOnly={false} />
+            {/snippet}
 
-        {#snippet input2()}
-            <Time time={time} setTime={setTime} displayOnly={false} />
-        {/snippet}
+            {#snippet input2()}
+                <Time time={time} setTime={setTime} displayOnly={false} />
+            {/snippet}
 
-        {#snippet output()}
-            <Speed speed={speed} setSpeed={setSpeed} displayOnly={true} />
-        {/snippet}
-    </Menu>
-{:else if calculationType == CalculationType.DISTANCE}
-    <Menu>
-        {#snippet input1()}
-            <Speed speed={speed} setSpeed={setSpeed} displayOnly={false} />
-        {/snippet}
+            {#snippet output()}
+                <Speed speed={speed} setSpeed={setSpeed} displayOnly={true} />
+            {/snippet}
+        </Menu>
+    {:else if calculationType == CalculationType.DISTANCE}
+        <Menu>
+            {#snippet input1()}
+                <Speed speed={speed} setSpeed={setSpeed} displayOnly={false} />
+            {/snippet}
 
-        {#snippet input2()}
-            <Time time={time} setTime={setTime} displayOnly={false} />
-        {/snippet}
+            {#snippet input2()}
+                <Time time={time} setTime={setTime} displayOnly={false} />
+            {/snippet}
 
-        {#snippet output()}
-            <Distance distance={distance} setDistance={setDistance} displayOnly={true} />
-        {/snippet}
-    </Menu>
-{:else if calculationType == CalculationType.TIME}
-    <Menu>
-        {#snippet input1()}
-            <Speed speed={speed} setSpeed={setSpeed} displayOnly={false} />
-        {/snippet}
+            {#snippet output()}
+                <Distance distance={distance} setDistance={setDistance} displayOnly={true} />
+            {/snippet}
+        </Menu>
+    {:else if calculationType == CalculationType.TIME}
+        <Menu>
+            {#snippet input1()}
+                <Speed speed={speed} setSpeed={setSpeed} displayOnly={false} />
+            {/snippet}
 
-        {#snippet input2()}
-            <Distance distance={distance} setDistance={setDistance} displayOnly={false} />
-        {/snippet}
+            {#snippet input2()}
+                <Distance distance={distance} setDistance={setDistance} displayOnly={false} />
+            {/snippet}
 
-        {#snippet output()}
-            <Time time={time} setTime={setTime} displayOnly={true} />
-        {/snippet}
-    </Menu>
-{/if}
+            {#snippet output()}
+                <Time time={time} setTime={setTime} displayOnly={true} />
+            {/snippet}
+        </Menu>
+    {/if}
+</div>
+

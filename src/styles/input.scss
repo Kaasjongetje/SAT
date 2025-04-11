@@ -8,35 +8,62 @@
 }
 
 .unit-label {
-    font-size: $unit-label-fontsize;
-    color: $unit-label-color;
+    // font-size: $unit-label-fontsize;
+    color: $text-color;
+    padding-left: 4px;
 }
 
 .value-container {
     padding: $value-container-padding; 
-    border: $value-container-bordersize solid $value-container-border-color; 
+    border: $value-container-bordersize solid $secondary-color; 
     border-radius: $value-container-borderradius; 
-    color: $value-color;
+    color: $input-color;
     font-size: $value-fontsize;
     display: flex;
     justify-content: center;
 
-    input {
-        padding: $value-padding; 
-        font-size: inherit;
-        color: inherit;
-        text-align: center;
-        width: 100%;
-        background-color: transparent;
+ 
+}
 
-        &.time-input {
-            box-sizing: content-box;
-            width: 2ch;
+input,
+.time-select {
+    padding: $value-padding;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+    text-align: center;
+}
+
+input {
+    width: 100%; // anders zijn ze defaultvalue van 300px
+
+    overflow-x: scroll;
+}
+
+.colon {
+    padding: $value-padding;
+}
+
+.time-select {
+    box-sizing: content-box;
+    width: 2.5ch; // de height is ietjes groter dan de width steeds omdat tekst standaard een stukje groter van boven en onder is, zie bv als je tekst selecteert
+    border-radius: 4px;
+    opacity: 1;
+
+    &:focus {
+        background-color: $secondary-color;
+    }
+
+    option {
+        background-color: $primary-color;
+
+        &:checked {
+            background-color: $focus-color;
         }
     }
-
-    .colon {
-        padding: $value-padding;
-    }
-
 }
+
+
+
+
+

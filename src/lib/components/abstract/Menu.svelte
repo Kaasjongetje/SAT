@@ -3,7 +3,7 @@
 
 </script>
 
-<div class="main-menu">
+<div class="main-menu-container">
   {@render input1?.()}
 
   {@render input2?.()}

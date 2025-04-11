@@ -9,8 +9,9 @@
 
 .input-group-label {
     font-weight: bold;
-    font-size: $inputgroup-label-fontsize;
-    color: $inputgroup-label-color;
+    // font-size: $inputgroup-label-fontsize;
+    color: $text-color;
+    padding-left: 4px;
 }
 
 .inputs-container {

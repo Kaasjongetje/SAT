@@ -1,20 +1,17 @@
-// Body
-$background-color: beige;
+$primary-color: rgb(27, 27, 27);
 
-// Main Menu
-$inputgroup-label-color: black;
+$secondary-color: rgb(40, 40, 40); // knoppen, borders en geselecteerde select
 
-// Calculation Type Selector
-$calculation-type-select-button-color: gray;
-$calculation-type-select-button-hovered-color: lightgray;
-$calculation-type-select-button-selected-color: darkgray;
-$calculation-type-select-button-fontcolor: black;
+$text-color: rgb(161, 161, 161);
+
+$text-hover-color: rgb(187, 31, 31); // voor de tekst in een gehoverde knop
+
+$text-selected-color: rgb(255, 255, 255); // voor de tekst in een geselecteerde knop
+
+$focus-color: rgb(151, 151, 151);
+
+$input-color: rgb(255, 255, 255);
+
+$accent-color: rgb(9, 111, 255);
 
 
-// Input Group
-
-
-// Input
-$value-container-border-color: black;
-$unit-label-color: black;
-$value-color: green;

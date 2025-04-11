@@ -1,0 +1,35 @@
+@use "sass:math";
+
+$min-viewport-width: 22.5rem;
+$max-viewport-width: 40rem;
+@function fluidHorizontalClamp($minSize, $maxSize) {
+    @return fluidClamp($minSize, $maxSize, $min-viewport-width, $max-viewport-width, vw)
+};
+
+@function fluidClamp ($minSize, $maxSize, $minLength, $maxLength, $unit) {
+    $slope: math.div(
+        $maxSize - $minSize,
+        $maxLength - $minLength
+    );
+
+    $intercept: $minSize - $slope * $minLength;
+
+    @return clamp(
+        $minSize,
+        #{roundToTwoDecimals(
+            $slope * 100
+        )}#{$unit}
+        + 
+        #{roundToTwoDecimals(
+            $intercept
+        )},
+        $maxSize
+    )
+};
+
+@function roundToTwoDecimals ($number) {
+    @return math.div(
+        math.round($number * 100),
+        100
+    )
+};

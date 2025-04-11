@@ -1,5 +1,5 @@
 @use "abstracts/sizes.scss" as *;
-@use "abstracts/functions.scss" as *;
+@use "abstracts/colors.scss" as *;
 
 .main-menu {
     display: flex;
@@ -11,5 +11,5 @@
 
 .dividing-line {
     height: $value-container-bordersize;
-    background-color: black;
+    background-color: $secondary-color;
 }

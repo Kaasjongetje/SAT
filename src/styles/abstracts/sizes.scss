@@ -1,27 +1,66 @@
-// Body
-$body-padding: 1rem;
-$calculation-type-selector-main-menu-distance: 1rem;
+@use "./fluidclamp.scss" as *;
 
+
+// Body
+
+$body-padding: fluidHorizontalClamp(0.875rem, 1.25rem);
+$app-wrapper-margin-block: 2rem;
+$calculation-type-selector-main-menu-distance: 2rem;
+
+$fontsize: fluidHorizontalClamp(0.75rem, 1.25rem);
 
 // Main Menu
-$main-menu-margin: 2rem;
+$main-menu-margin: fluidHorizontalClamp(2rem, 4rem);
 
 // Calculation Type Selector
-$calculation-type-selector-gap: 3rem;
-$calculation-type-select-button-padding: 0.5rem;
-$calculation-type-select-button-borderradius: 6px;
-$calculation-type-select-button-fontsize: 1rem;
+$calculation-type-selector-gap: 1rem;
+$calculation-type-select-button-padding: fluidHorizontalClamp(0.375rem, 0.75rem);
+$calculation-type-select-button-borderradius: 4px;
 
 // Input Group
-$inputgroup-label-inputs-distance: 1rem;
-$inputgroup-label-fontsize: 1.25rem;
-$inputs-gap: 0.5rem;
+$inputgroup-label-inputs-distance: 0.5rem;
+$inputs-gap: 0.375rem;
 
 // Input container
-$unit-label-value-container-distance: 0.25rem;
-$unit-label-fontsize: 1rem;
-$value-fontsize: 1.5rem;
-$value-container-padding: 0.5rem;
-$value-padding: 0.5rem;
+$unit-label-value-container-distance: 0.125rem;
+$value-fontsize: 1.75rem;
+$value-fontsize: fluidHorizontalClamp(1.5rem, 2rem);
+$value-container-padding: 0.25rem;
+$value-padding: 0.25rem;
 $value-container-bordersize: 2px;
 $value-container-borderradius: 6px;
+
+
+
+
+
+
+// Zijn er sizes die bij min en max schermgrootdinges hetzelfde zijn maak daar
+// een var van
+
+// // Body
+// $body-padding: 0.875rem;
+// $calculation-type-selector-main-menu-distance: 1rem;
+
+// // Main Menu
+// $main-menu-margin: 2rem;
+
+// // Calculation Type Selector
+// $calculation-type-selector-gap: 1rem;
+// $calculation-type-select-button-padding: 0.375rem;
+// $calculation-type-select-button-borderradius: 4px;
+// $calculation-type-select-button-fontsize: 0.75rem;
+
+// // Input Group
+// $inputgroup-label-inputs-distance: 0.5rem;
+// $inputgroup-label-fontsize: 0.75rem;
+// $inputs-gap: 0.375rem;
+
+// // Input container
+// $unit-label-value-container-distance: 0.125rem;
+// $unit-label-fontsize: 0.75rem;
+// $value-fontsize: 1.5rem;
+// $value-container-padding: 0.25rem;
+// $value-padding: 0.25rem;
+// $value-container-bordersize: 2px;
+// $value-container-borderradius: 6px;
