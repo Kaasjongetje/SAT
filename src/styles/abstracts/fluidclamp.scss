@@ -6,6 +6,12 @@ $max-viewport-width: 40rem;
     @return fluidClamp($minSize, $maxSize, $min-viewport-width, $max-viewport-width, vw)
 };
 
+$min-viewport-height: 45rem;
+$max-viewport-heigth: 85rem;
+@function fluidVerticalClamp($minSize, $maxSize) {
+    @return fluidClamp($minSize, $maxSize, $min-viewport-height, $max-viewport-heigth, vh)
+};
+
 @function fluidClamp ($minSize, $maxSize, $minLength, $maxLength, $unit) {
     $slope: math.div(
         $maxSize - $minSize,

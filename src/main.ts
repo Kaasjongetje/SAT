@@ -6,4 +6,8 @@ const app = mount(App, {
   target: document.body,
 })
 
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js")
+}
+
 export default app

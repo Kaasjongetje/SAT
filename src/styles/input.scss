@@ -4,19 +4,18 @@
 .input {
     display: flex;
     flex-direction: column;
-    gap: $unit-label-value-container-distance;
+    gap: 0.125rem;
 }
 
 .unit-label {
-    // font-size: $unit-label-fontsize;
     color: $text-color;
     padding-left: 4px;
 }
 
 .value-container {
-    padding: $value-container-padding; 
-    border: $value-container-bordersize solid $secondary-color; 
-    border-radius: $value-container-borderradius; 
+    padding: $value-padding; 
+    border: $bordersize solid $secondary-color; 
+    border-radius: 6px; 
     color: $input-color;
     font-size: $value-fontsize;
     display: flex;
@@ -27,7 +26,7 @@
 
 input,
 .time-select {
-    padding: $value-padding;
+    padding: 0.25rem;
     font-size: inherit;
     color: inherit;
     background-color: transparent;

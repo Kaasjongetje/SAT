@@ -1,9 +1,10 @@
 @use "abstracts/colors.scss" as *;
 @use "abstracts/sizes.scss" as *;
+@use "abstracts/fluidclamp.scss" as *;
 
 .calculation-type-selector {
     display: flex;
-    gap: $calculation-type-selector-gap;
+    gap: 1.25rem;
 }
 
 .calculation-type-select-button {
@@ -13,8 +14,7 @@
     background-color: $secondary-color;
 
     color: $text-color;
-    // font-size: $calculation-type-select-button-fontsize;
-    border-radius: $calculation-type-select-button-borderradius;
+    border-radius: 4px;
     font-size: inherit;
 
     &:hover,

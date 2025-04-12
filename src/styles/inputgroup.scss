@@ -4,7 +4,7 @@
 .input-group {
     display: flex;
     flex-direction: column;
-    gap: $inputgroup-label-inputs-distance;
+    gap: 0.5rem;
 }
 
 .input-group-label {
@@ -17,5 +17,5 @@
 .inputs-container {
     display: flex;
     flex-direction: column;
-    gap: $inputs-gap;
+    gap: 0.375rem;
 }
